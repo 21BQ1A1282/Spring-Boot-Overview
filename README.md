@@ -1,7 +1,5 @@
 # Spring Boot Overview
-
-![Spring Boot Overview]![spring-boot](https://github.com/user-attachments/assets/de167f88-e99d-451c-9600-f385bf261c83)
-
+![spring-boot](https://github.com/user-attachments/assets/de167f88-e99d-451c-9600-f385bf261c83)
 
 
 Spring Boot is a powerful, production-ready framework that simplifies the process of building modern, scalable, and maintainable Java applications. It is built on top of the Spring Framework, but removes the complexity associated with traditional Spring configurations, allowing developers to focus on writing business logic rather than boilerplate code.
