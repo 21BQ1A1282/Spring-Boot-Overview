@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Home Page</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container mt-5">
+		<h2 class="text-center">Sai Home Page</h2>
+		<hr class="my-4">
+		<p class="lead text-center">Welcome to the Sai home page!!</p>
+		<hr class="my-4">
+		
+		<!-- display user name and role -->
+		<p class="lead text-center">
+			User: <span sec:authentication="principal.username"></span> <br>
+			<br> Role(s): <span sec:authentication="principal.authorities"></span>
+		</p>
+
+		<!-- Add a logout button -->
+		<form action="#" th:action="@{/logout}" method="POST"
+			class="text-center">
+			<button type="submit" class="btn btn-primary">Logout</button>
+		</form>
+	</div>
+
+	<!-- Bootstrap JS and dependencies (optional) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
