@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Home Page</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container mt-5">
+	
+		<h2 class="text-center">Sai Home Page</h2>
+		<hr class="my-4">
+		<p class="lead text-center">Welcome to the Sai home page!!</p>
+		<hr class="my-4">
+
+		<!-- display user name and role -->
+		<p class="lead text-center">
+			User: <span sec:authentication="principal.username"></span>
+			<br><br>
+			Role(s): <span sec:authentication="principal.authorities"></span>
+		</p>
+		<hr class="my-4">
+
+		<!-- Add a link to point /leaders .. this is for the managers -->
+		<div class="container mt-5" sec:authorize="hasRole('MANAGER')">
+			<p>
+				<a th:href="@{/leaders}">LeaderShip Meeting</a>(only for Manager peeps)
+			</p>
+		</div>
+		<hr class="my-4">
+
+		<!-- Add a link to point /systems .. this is for the admins -->
+		<div class="container mt-5" sec:authorize="hasRole('ADMIN')">
+			<p>
+				<a th:href="@{/systems}">IT Systems Meeting</a>(only for Admin peeps)
+			</p>
+		</div>
+		
+		<!-- Add a logout button -->
+		<form action="#" th:action="@{/logout}" method="POST" class="text-center">
+			<button type="submit" class="btn btn-primary">Logout</button>
+		</form>
+		
+	</div>
+
+</body>
+</html>
