@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Leaders Home Page</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="container mt-5">
+		<h2 class="text-center">Sai Leaders Home Page</h2>
+		<hr class="my-4">
+
+		<p class="lead text-center">
+			See you in America...for our annual Leadership retreat!! <br>
+			keep this trip a secret
+		</p>
+		<hr class="my-4">
+		
+		<a th:href="@{/}">Back to Home page</a>
+	</div>
+
+</body>
+</html>
