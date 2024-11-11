@@ -33,7 +33,18 @@ public class MyDemoLoggingAspect {
         long begin = System.currentTimeMillis();
 
         // now, let's execute the method
-        Object result = theProceedingJoinPoint.proceed();
+        Object result = null;
+
+        try {
+            result = theProceedingJoinPoint.proceed();
+        }
+        catch (Exception exc) {
+            // log the exception
+            System.out.println(exc.getMessage());
+
+            // rethrow exception
+            throw exc;
+        }
 
         // get end timestamp
         long end = System.currentTimeMillis();
@@ -44,6 +55,8 @@ public class MyDemoLoggingAspect {
 
         return result;
     }
+
+
 
      @After("execution(* com.sai.aopdemo.dao.AccountDAO.findAccounts(..))")
     public void afterFinallyFindAccountsAdvice(JoinPoint theJoinPoint) {
